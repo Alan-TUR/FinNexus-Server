@@ -4,25 +4,25 @@ server:
 spring:
   application:
     name: gateway-service
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.pom.xml:8848
-    gateway:
-      routes:
-        - id: auth-service
-          uri: lb://auth-service
-          predicates:
-            - Path=/auth/**
-        - id: ai-service
-          uri: lb://ai-service
-          predicates:
-            - Path=/ai/**
-        - id: account-service
-          uri: lb://account-service
-          predicates:
-            - Path=/account/**
-    sentinel:
-      transport:
-        dashboard: localhost:8080
-      eager: true
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.pom.xml:8848
+#    gateway:
+#      routes:
+#        - id: auth-service
+#          uri: lb://auth-service
+#          predicates:
+#            - Path=/auth/**
+#        - id: ai-service
+#          uri: lb://ai-service
+#          predicates:
+#            - Path=/ai/**
+#        - id: account-service
+#          uri: lb://account-service
+#          predicates:
+#            - Path=/account/**
+#    sentinel:
+#      transport:
+#        dashboard: localhost:8080
+#      eager: true

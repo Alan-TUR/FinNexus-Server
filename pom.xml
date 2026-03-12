@@ -13,12 +13,14 @@
         <module>ai-finance-auth</module>
         <module>ai-finance-ai</module>
         <module>ai-finance-gateway</module>
+        <module>ai-finance-transaction</module>
+        <module>ai-finance-account</module>
     </modules>
 
     <properties>
-        <spring.boot.version>3.1.5</spring.boot.version>
-        <spring.cloud.version>2022.0.4</spring.cloud.version>
-        <spring.cloud.alibaba.version>2021.0.4.0</spring.cloud.alibaba.version>
+        <spring.boot.version>2.7.18</spring.boot.version>
+        <spring.cloud.version>2021.0.9</spring.cloud.version> <!-- 2021.0.x 最新 -->
+        <spring.cloud.alibaba.version>2021.0.5.0</spring.cloud.alibaba.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -54,19 +56,14 @@
     </dependencyManagement>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>3.5.11</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
