@@ -3,25 +3,57 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.aifinance</groupId>
-        <artifactId>ai-finance-parent</artifactId>
+        <groupId>cn.tmacz</groupId>
+        <artifactId>FinNexus-Server</artifactId>
         <version>1.0.0</version>
-        <relativePath>../pom.xml</relativePath> <!-- 根据实际目录层级调整 -->
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <packaging>jar</packaging>
-    <groupId>cn.tmacz</groupId>
     <artifactId>ai-finance-account</artifactId>
-    <version>1.0.0</version>
     <name>ai-finance-account</name>
-    <description>账户服务管理用户资产，与交易服务配合实现分布式事务</description>
+    <description>账户服务 - 管理用户资产，与交易服务配合实现分布式事务</description>
 
-    <properties>
-        <java.version>17</java.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.tmacz</groupId>
+            <artifactId>ai-finance-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -29,7 +61,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -40,5 +71,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

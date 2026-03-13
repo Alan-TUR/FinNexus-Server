@@ -1,8 +1,8 @@
 package cn.tmacz.common;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class R<T> {
     private int code;
     private String msg;

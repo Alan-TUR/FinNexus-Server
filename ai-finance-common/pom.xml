@@ -3,27 +3,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.aifinance</groupId>
-        <artifactId>ai-finance-parent</artifactId>
+        <groupId>cn.tmacz</groupId>
+        <artifactId>FinNexus-Server</artifactId>
         <version>1.0.0</version>
-        <relativePath>../pom.xml</relativePath> <!-- 根据实际目录层级调整 -->
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <packaging>jar</packaging>
-    <groupId>cn.tmacz</groupId>
     <artifactId>ai-finance-common</artifactId>
-    <version>1.0.0</version>
     <name>ai-finance-common</name>
-    <description>ai-finance-common</description>
+    <description>公共模块 - 提供通用工具类和响应封装</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-    <dependencies></dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 </project>
