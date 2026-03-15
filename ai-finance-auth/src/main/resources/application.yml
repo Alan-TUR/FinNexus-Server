@@ -1,14 +1,30 @@
-server:
-  port: 8100
-
 spring:
   application.name: ai-finance-auth
+  # 数据库连接池配置
   datasource:
-    url: jdbc:mysql://localhost:3306/ai_finance?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ai-finance-account?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 20
+      minimum-idle: 10
+      idle-timeout: 300000
+      max-lifetime: 900000
+      connection-test-query: SELECT 1
 
+# 日志配置
+logging:
+  level:
+    root: debug
+
+# mybatis-plus配置
 mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 32000
